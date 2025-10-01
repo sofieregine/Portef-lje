@@ -9,7 +9,7 @@ const navlinks = [
         href: "#about"
 
     },
-    {  title: "Experince",
+    {  title: "Experience",
         href: "#experience"
     },
     {
@@ -25,8 +25,8 @@ const navlinks = [
 ]
 
 export function Navbar() {
-    return (<div className=" flex p-4 w-full">
-        <p className=" grow font-bold text-4xl">Portfolio</p>
+    return (<div className=" font-thin flex p-4 w-full">
+        <p className=" grow font-bold text-3xl">Portfolio</p>
         <Navlinks links={navlinks}/>
 
         <MobileNavlinks links={navlinks}/>

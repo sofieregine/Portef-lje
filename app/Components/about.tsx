@@ -5,6 +5,7 @@ import { InniAbout, InniAboutProps } from "./inniabout";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { title } from "process";
+import { Aboutservice } from "../backend/Aboutservice";
 
 const aboutMe: InniAboutProps[] = [
   {
@@ -30,32 +31,40 @@ const aboutMe: InniAboutProps[] = [
 ];
 
 export const About = () => {
+  const data = Aboutservice.getaboutinfo
+  const daystoxmas = Aboutservice.x()
+
   return (
-    <div className="flex items-start w-6/7 bg-sky-200 space-x-6 p-10 m-3 ">
-      <div className="flex flex-col justify-start">
-        <p className="font-bold text-md bg-fuchsia-800 bg-clip-text text-transparent mb-2">
-          this is real this is me
-        </p>
-      </div>
-      <div className="grow">
-        <Image
-          src={require("../assets/dusjetid.jpg")}
-          alt="Jeg tar meg en god vask iblandt"
-          width={200}
-          height={200}
-        />
+    <div id="about" className="flex items-start w-6/7 bg-sky-200 space-x-6 p-10 m-3 border-3 rounded-4xl ">
+      {/* Left column: heading + image */}
+      <div className=" grow space-y-6 p-4 border-3 rounded-4xl">
+        <div className="flex flex-col">
+          <p className="font-bold text-3xl bg-fuchsia-800 bg-clip-text text-transparent">
+            Litt om meg, det er {daystoxmas} dager til jul
+          </p>
+        </div>
+
+        <div className="w-80 h-80 overflow-hidden rounded-2xl">
+          <Image
+            src={require("../assets/dusjetid.jpg")}
+            alt="Jeg tar meg en god vask iblandt"
+            width={320}
+            height={320}
+            className="object-cover w-full h-full"
+          />
+        </div>
       </div>
 
-      <div className="grow space-y-5 border p-3">
-        {aboutMe.map((item) => {
-          return (
-            <InniAbout
-              icon={item.icon}
-              title={item.title}
-              description={item.description}
-            />
-          );
-        })}
+      {/* Right column: list */}
+      <div className="grow space-y-6 p-4 border-3 rounded-4xl">
+        {aboutMe.map((item) => (
+          <InniAbout
+            key={item.title}
+            icon={item.icon}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
       </div>
     </div>
   );

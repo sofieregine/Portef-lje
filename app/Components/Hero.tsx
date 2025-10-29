@@ -9,7 +9,7 @@ export const Hero = () => {
   return (
     <div className="w-6/7 bg-sky-200 grow space-y-10 space-x-flex border-3 rounded-4xl p-4">
       <p className=" w-full text-6xl flex-wrap font-bold bg-gradient-to-r from-pink-500 to-pink-300 bg-clip-text text-transparent p-5">
-        Velkommen til sykeste portfolioen du noen gang har ære av å få oppleve{" "}
+        Velkommen til min side{" "}
       </p>
       <div className="flex">
       <div className="grow space-y-7">

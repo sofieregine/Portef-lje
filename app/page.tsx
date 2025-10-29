@@ -8,5 +8,6 @@ export default function Hjemmeside() {
     <Navbar/>
     <Hero/>
     <About/>
+    <Experience/>
   </div>
 }

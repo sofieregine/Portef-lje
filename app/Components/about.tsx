@@ -31,20 +31,21 @@ const aboutMe: InniAboutProps[] = [
 ];
 
 export const About = () => {
-  const data = Aboutservice.getaboutinfo
-  const daystoxmas = Aboutservice.x()
+  const data = Aboutservice.getaboutinfo;
+  const daystoxmas = Aboutservice.daysUntilChristmas();
 
   return (
-    <div id="about" className="flex items-start w-6/7 bg-sky-200 space-x-6 p-10 m-3 border-3 rounded-4xl ">
+    <div id="about" className="flex items-start w-6/7 space-x-6  m-3  ">
       {/* Left column: heading + image */}
-      <div className=" grow space-y-6 p-4 border-3 rounded-4xl">
+      <div className=" grow space-y-6 p-4 border-3 rounded-4xl  bg-sky-200">
         <div className="flex flex-col">
           <p className="font-bold text-3xl bg-fuchsia-800 bg-clip-text text-transparent">
-            Litt om meg, det er {daystoxmas} dager til jul
+            Det er {daystoxmas} dager til jul
           </p>
+        
         </div>
 
-        <div className="w-80 h-80 overflow-hidden rounded-2xl">
+        <div className="w-80 h-80 overflow-hidden rounded-2xl ">
           <Image
             src={require("../assets/dusjetid.jpg")}
             alt="Jeg tar meg en god vask iblandt"
@@ -56,7 +57,7 @@ export const About = () => {
       </div>
 
       {/* Right column: list */}
-      <div className="grow space-y-6 p-4 border-3 rounded-4xl">
+      <div className="grow space-y-6 p-4 border-3 rounded-4xl  bg-sky-200">
         {aboutMe.map((item) => (
           <InniAbout
             key={item.title}
